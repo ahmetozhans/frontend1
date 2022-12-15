@@ -1,0 +1,146 @@
+:root{
+    --Violet: hsl(257, 40%, 49%);
+    --Soft-Magenta: hsl(300, 69%, 71%);
+}
+
+body{
+    background-image: url(../images/bg-desktop.svg);
+    background-color: var(--Violet);
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+}
+
+
+.container {
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 0.4fr 2.6fr 0.4fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "header"
+      "middle"
+      "footer"; 
+    height: 100vh;
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .middle {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". ."; 
+    grid-area: middle; 
+  }
+  header { grid-area: header; }
+  .footer {
+    display: grid; 
+    grid-template-columns: 1.2fr 0.8fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". ."; 
+    grid-area: footer; 
+  }
+
+.logo{
+    width: 200px;
+    height: 150px;
+}
+
+.main-left{
+    display: flex;
+    flex-shrink: 0;
+}
+.main-right{
+    display: flex;
+    flex-shrink: 1;
+    flex-direction: column;
+    padding: 48px;
+    margin-bottom: 30px;
+}
+
+.main-right h1{
+    font-weight: 400;
+    font-size: 48px;
+    margin-bottom: 16px;
+    line-height:56px
+
+}
+p{
+    font-weight: 400;
+    line-height:28px;
+    font-size: 16px;
+
+}
+button{
+    margin-top: 30px;
+    width: 200px;
+    height: 48px;
+    padding: 8px 8px 8px 8px;
+    background-color: white;
+    border-radius: 16px;
+    color: rgb(26, 26, 26);
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    font-size: 16px;
+    font-weight: 400;
+}
+button:hover{
+    background-color: var(--Soft-Magenta);
+    color: white;
+}
+
+.footer{
+    display: flex;
+    float: right;
+    padding: 16px;
+}
+
+.footer i{
+    width: 38px;
+    height: 38px;
+    border-radius: 100%;
+    border: 1px solid;
+    padding: 12px;
+    margin-left: 16px;
+}
+
+.footer i:hover{
+    width: 38px;
+    height: 38px;
+    border-radius: 100%;
+    border: 1px solid;
+    padding: 12px;
+    margin-left: 16px;
+    color: var(--Soft-Magenta);
+}
+
+@media (min-width: 350px) and (max-width: 768px) {
+    .middle {
+        display: flex; 
+        flex-direction: column;
+      }
+      .footer{
+        display: flex;
+        padding: 16px;
+        bottom: 0;
+        margin-bottom: 16px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    p{
+        text-align: center;
+    }
+    button{
+        left: 50%;
+        transform: translate(-50%);
+        position: relative;
+    }
+    .main-right h1{
+        text-align: center;
+        font-size: 24px;
+        line-height:38px
+    }
+  }
